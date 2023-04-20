@@ -6,18 +6,24 @@
 
 "use strict"
 
+// This function allows for a specific output when the user input text field is left empty
+function isEmpty(str) {
+  return !str || 0 === str.length;
+}
+
+// This function determines which movie rating the user can go and see alone based on their age
 function AgeEntered() {
 
   // Setting constants: first age threshold is 17, second is 13, third is 5
   const FIRST_THRESHOLD = 17;
   const SECOND_THRESHOLD = 13;
   const THIRD_THRESHOLD = 5;
-  
-  // Get the user's age from input form
-  let userAge = document.getElementById("user-age").value;
 
   // Define message that will bes displayed as result later on
   let message = "";
+  
+  // Get the user's age from input form
+  let userAge = parseInt(document.getElementById("user-age").value);
   
   // First if statement: if user age is greater than or equal to 17, display that they can see an R-rated movie alone.
   if (userAge >= FIRST_THRESHOLD) {
@@ -36,12 +42,12 @@ function AgeEntered() {
 
   // Otherwise, if age is less than 0, display that they must enter a valid age
   else if (userAge < 0) {
-    message = "Please enter a valid number for your age."
+    message = "Please enter a valid number for your age.";
   }
 
   // Otherwise, if nothing is entered, display that they msut enter their age
-  else if (userAge == "") {
-    message = "Please enter your age."
+  else if (isEmpty(userAge)) {
+    message = "Please enter something for your age.";
   }
     
   //else (any age less than 5)
