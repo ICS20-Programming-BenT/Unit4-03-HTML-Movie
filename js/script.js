@@ -45,7 +45,7 @@ function AgeEntered() {
     message = "Please enter a valid number for your age.";
   }
 
-  // Otherwise, if nothing is entered, display that they msut enter their age
+  // Otherwise, if nothing is entered, display that they must enter their age
   else if (isEmpty(userAge)) {
     message = "Please enter something for your age.";
   }
